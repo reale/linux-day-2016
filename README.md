@@ -1,6 +1,6 @@
-# L'insostenibile leggerezza: estensioni della shell Bash
+# L’insostenibile leggerezza: estensioni della shell Bash
 
-L'intervento anzitutto una panoramica delle librerie di estensione per (e in) Bash, sotto entrambi gli aspetti tecnico e storico.
+L’intervento presenta anzitutto una panoramica delle librerie di estensione per (e in) Bash, sotto entrambi gli aspetti tecnico e storico.
 
 Si farà cenno alle caratteristiche intrinseche del linguaggio che rendono ardua la costruzione di un sistema organico e universale di librerie. 
 
