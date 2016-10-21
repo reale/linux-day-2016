@@ -25,7 +25,7 @@ Estensioni della shell Bash
 
 	I have a natural revulsion to any operating system that shows so little planning as to have to named all of its commands after digestive noises (awk, grep, fsck, nroff).
 
-	-- The UNIXHATERS Handbook
+	-- The UNIX HATERS Handbook
 
 ----
 
@@ -52,9 +52,39 @@ CVE-2014-7169
 
 ----
 
-Sezione 1
-=========
+Weaknesses
+==========
 
+----
+
+Speed
+-----
+
+Attempts
+========
+
+----
+
+Bashinator
+----------
+
+.. code::
+
+	function createDirectory() {
+		local directory=${1}
+		if [[ ­z “${directory}” ]]; then
+			__msg err “argument 1 (directory) missing”
+			return 2
+		fi
+		__msg debug “directory: ${directory}”
+		if ! mkdir ­p “${directory}” >>”${_L}” 2>&1; then
+			__msg err “failed to create directory '${directory}'”
+			return 2
+		fi
+		return 0
+	}
+
+----
 
 Colofóne
 ========
