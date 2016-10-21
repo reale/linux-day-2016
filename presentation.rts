@@ -17,7 +17,7 @@ http://ld16.lugroma3.org/
 The Unbearable Lightness
 ========================
 
-A potpourri of Bash extensions
+Extending the Bash shell
 
 ----
 
@@ -66,6 +66,18 @@ Speed
 
 ----
 
+Everything is text
+------------------
+
+.. code::
+
+	egrep '^To:|^Cc:' /var/spool/mail/$USER      | \
+	cut -c5-                                     | \
+	awk '{ for (i = 1; i <= NF; i++) print $i }' | \
+	sed 's/,//g' | grep -v $USER | sort | uniq
+
+----
+
 Floating point
 --------------
 
@@ -83,15 +95,76 @@ select? poll? events?
 
 ----
 
+Multidimensional arrays
+-----------------------
+
+.. code::
+
+	$ array=('d1=(v1 v2 v3)' 'd2=(v1 v2 v3)')
+	$ for elt in "${array[@]}";do eval $elt;done
+	$ echo "d1 ${#d1[@]} ${d1[@]}"
+	$ echo "d2 ${#d2[@]} ${d2[@]}"
+
+----
+
 Parsing
 -------
 
 .. code::
 
-	sed                                                                     \
-	    -ne "s|^\($s\):|\1|"                                                \
-	    -e  "s|^\($s\)\($w\)$s:$s[\"']\(.*\)[\"']$s\$|\1$fs\2$fs\3|p"       \
+	sed                                                                \
+	    -ne "s|^\($s\):|\1|"                                           \
+	    -e  "s|^\($s\)\($w\)$s:$s[\"']\(.*\)[\"']$s\$|\1$fs\2$fs\3|p"  \
 	    -e  "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"
+
+----
+
+JSON
+----
+
+----
+
+Paradigms
+---------
+
+OO?  Functional?  Flow-driven?  Reflective?
+
+----
+
+Large programs
+--------------
+
+.. code::
+
+	source
+
+----
+
+Debugging
+---------
+
+.. code::
+
+	set -x
+
+----
+
+Why does it matter?
+===================
+
+----
+
+DRY
+---
+
+Don't write scripts, write libraries
+
+----
+
+DevOps
+------
+
+Python/Ruby/Scala/... are not ubiquitous
 
 ----
 
