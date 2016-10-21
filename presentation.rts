@@ -57,15 +57,42 @@ Weaknesses
 
 ----
 
+http://mywiki.wooledge.org/BashWeaknesses
+
+----
+
 Speed
 -----
+
+	Do not complain that the screwdriver sucks at driving a nail into the wall.
+
+	-- Unknown
+
+----
+
+Floating point
+--------------
+
+.. code::
+
+	$ echo $((3/2))
+	1
+
+----
+
+Process management
+------------------
+
+select? poll? events?
+
+----
 
 Attempts
 ========
 
 ----
 
-Bashinator
+bashinator
 ----------
 
 .. code::
@@ -83,6 +110,26 @@ Bashinator
 		fi
 		return 0
 	}
+
+----
+
+log4sh
+------
+
+.. code::
+
+	# set alternative 'nc' command
+	log4sh_setAlternative nc /bin/nc
+
+	# add and configure a SyslogAppender that logs to a remote host
+	logger_addAppender mySyslog
+	appender_setType mySyslog SyslogAppender
+	appender_syslog_setFacility mySyslog local4
+	appender_syslog_setHost mySyslog somehost
+	appender_activateOptions mySyslog
+
+	# say Hello to the world
+	logger_info 'Hello, world'
 
 ----
 
