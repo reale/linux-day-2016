@@ -21,7 +21,7 @@ Extending the Bash shell
 
 ----
 
-	I have a natural revulsion to any operating system that shows so little planning as to have to named all of its commands after digestive noises (awk, grep, fsck, nroff).
+	I have a natural revulsion to any operating system that shows so little planning as to have named all of its commands after digestive noises (awk, grep, fsck, nroff).
 
 	-- The UNIX HATERS Handbook
 
@@ -164,6 +164,24 @@ Subshell Dilemma
 
 ----
 
+Bashisms
+--------
+
+.. code::
+
+	eval x=\$$x
+
+----
+
+Portability
+-----------
+
+	It is easier to port a shell than a shell script.
+
+	-- Larry Wall
+
+----
+
 Why does it matter?
 ===================
 
@@ -206,6 +224,15 @@ bashinator
 		fi
 		return 0
 	}
+
+----
+
+bashworks
+---------
+
+	Inversion of control: the overall program's flow of control is not dictated by the caller, but by the framework. This applies for the framework and several modules, like conf, at a basic level, and in a polite way.
+
+	Polite functions: Generic reuseable functions usually take a module name string argument. It should let the actual module to overload what is it about to process.
 
 ----
 
