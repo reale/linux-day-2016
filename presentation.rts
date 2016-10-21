@@ -21,13 +21,19 @@ L'insostenibile leggerezza
 
 Estensioni della shell Bash
 
-.. code::
+----
 
-	env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
+Shellshocks
+===========
 
 ----
 
-http://linux-day-2016.github.io/
+CVE-2014-6271
+-------------
+
+.. code::
+
+	env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
 
 ----
 
@@ -44,10 +50,8 @@ Featuring Google Fonts: Libre Baskerville, Racing Sans One, Satisfy.
 
 ----
 
-exit()
+exit 0
 ======
-
-----
 
 Roberto Reale
 
