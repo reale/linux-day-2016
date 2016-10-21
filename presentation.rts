@@ -93,13 +93,6 @@ Floating point
 
 ----
 
-Process management
-------------------
-
-select? poll? events?
-
-----
-
 Multidimensional arrays
 -----------------------
 
@@ -109,6 +102,80 @@ Multidimensional arrays
 	$ for elt in "${array[@]}";do eval $elt;done
 	$ echo "d1 ${#d1[@]} ${d1[@]}"
 	$ echo "d2 ${#d2[@]} ${d2[@]}"
+
+----
+
+Variable typing
+---------------
+
+.. code::
+
+	$ declare -i x
+	$ x=foo
+	$ echo $x
+	0
+
+----
+
+Variable scope
+--------------
+
+Local vs Global vs Environment
+
+----
+
+Return values
+-------------
+
+Bash functions don't return anything (except numbers in the range 0-255); they only produce output streams
+
+----
+
+Passing by reference
+--------------------
+
+.. code::
+
+	function swap()
+	{
+		eval "$1=${!2} $2=${!1}"
+	}
+
+	$ x=a y=b
+	$ swap x y
+	b a
+
+----
+
+Function scope
+--------------
+
+
+
+----
+
+Try/catch
+---------
+
+.. code::
+
+	trap
+
+----
+
+Exception handling
+------------------
+
+.. code::
+
+	set -e
+
+----
+
+Process management
+------------------
+
+select? poll? events?
 
 ----
 
@@ -141,7 +208,7 @@ Large programs
 
 .. code::
 
-	source
+	source foobar.sh
 
 ----
 
