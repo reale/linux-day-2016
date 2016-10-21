@@ -21,6 +21,10 @@ L'insostenibile leggerezza
 
 Estensioni della shell Bash
 
+.. code::
+
+	env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
+
 ----
 
 http://linux-day-2016.github.io/
