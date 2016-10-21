@@ -3,23 +3,21 @@
 :css: presentation.css
 :data-x: r1200
 
-.. title: L'insostenibile leggerezza
+.. title: The Unbearable Lightness
 
 ----
 
-22 Ottobre 2016
-
-##LinuxDay2016
---------------
+#LinuxDay2016
+-------------
 
 http://ld16.lugroma3.org/
 
 ----
 
-L'insostenibile leggerezza
-==========================
+The Unbearable Lightness
+========================
 
-Estensioni della shell Bash
+Bash extensions
 
 ----
 
@@ -133,12 +131,10 @@ log4sh
 
 ----
 
-Colofóne
+colophon
 ========
 
-Presentazione composta con vim e Hovercraft! su CentOS Linux 7.2.
-
-Featuring Google Fonts: Libre Baskerville, Racing Sans One, Satisfy.
+vim, Hovercraft!, CentOS Linux 7.2
 
 ----
 
