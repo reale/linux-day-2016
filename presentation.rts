@@ -27,6 +27,11 @@ Extending the Bash shell
 
 ----
 
+Till October, 31
+http://bit.ly/linuxday2016
+
+----
+
 Shellshocks
 ===========
 
@@ -146,6 +151,16 @@ Debugging
 .. code::
 
 	set -x
+
+----
+
+Subshell Dilemma
+----------------
+
+.. code::
+
+	$ c=0; ls * | while read i; do ((c++)); done; echo $c
+	0
 
 ----
 
