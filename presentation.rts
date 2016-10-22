@@ -429,6 +429,21 @@ oobash
 
 ----
 
+ticktick
+--------
+
+.. code::
+
+	. ticktick.sh
+
+	function printEmployees() {
+	    for employee in ``people.Engineering.items()``; do
+		printf "    - %s\n" ${!employee}
+	    done
+	}
+
+----
+
 colophon
 ========
 
