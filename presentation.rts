@@ -138,7 +138,7 @@ Passing by reference
 
 	function swap()
 	{
-		eval "$1=${!2} $2=${!1}"
+	    eval "$1=${!2} $2=${!1}"
 	}
 
 	$ x=a y=b
@@ -271,6 +271,11 @@ Python/Ruby/Scala/... are not ubiquitous
 Attempts
 ========
 
+bang.sh
+-------
+
+the "b" namespace
+
 ----
 
 bashinator
@@ -278,19 +283,43 @@ bashinator
 
 .. code::
 
-	function createDirectory() {
-		local directory=${1}
-		if [[ ­z “${directory}” ]]; then
-			__msg err “argument 1 (directory) missing”
-			return 2
-		fi
-		__msg debug “directory: ${directory}”
-		if ! mkdir ­p “${directory}” >>”${_L}” 2>&1; then
-			__msg err “failed to create directory '${directory}'”
-			return 2
-		fi
-		return 0
+	function createDirectory() {
+	    local directory=${1}
+	    if [[ -z "${directory}" ]]; then
+	        __msg err "argument 1 (directory) missing"
+	        return 2
+	    fi
+	    __msg debug "directory: ${directory}"
+	    if ! mkdir -p "${directory}" >> "$_{L}" 2>&1; then
+	        __msg err "failed to create directory '${directory}'"
+	        return 2
+	    fi
+	    return 0
 	}
+
+----
+
+bash manager
+------------
+
+.. code::
+
+	hello:
+	p1=World!     
+
+	$ ./bash_manager.sh -h /tmp/helloHome
+	Hello World!
+
+----
+
+bash toolbox
+------------
+
+.. code::
+
+	alias   fail='printf "${BASH_SOURCE##*/}: ${FU ...
+	alias  debug='printf "${BASH_SOURCE##*/}: ${FU ...
+	alias caller='nm=$(builtin caller 0); nm=${nm% ...
 
 ----
 
@@ -300,6 +329,13 @@ bashworks
 	Inversion of control: the overall program's flow of control is not dictated by the caller, but by the framework. This applies for the framework and several modules, like conf, at a basic level, and in a polite way.
 
 	Polite functions: Generic reuseable functions usually take a module name string argument. It should let the actual module to overload what is it about to process.
+
+----
+
+blp
+---
+
+minimalist approach
 
 ----
 
@@ -320,6 +356,35 @@ log4sh
 
 	# say Hello to the world
 	logger_info 'Hello, world'
+
+----
+
+mbfl
+----
+
+.. code::
+
+	mbfl_argv_all_files || \
+	    exit_because_wrong_command_line_arguments
+	for item in "${ARGV[@]}"
+	do
+	test "${script_option_AUTO}" = yes && {
+	size=$(mbfl_file_get_size "${item}")
+
+----
+
+oobash
+------
+
+.. code::
+
+	## class Dialog
+	Dialog=(
+	    # Explicit definition is needed to make inheritance possible.
+
+	    function __new__ = Dialog::__new__
+	    function __delete__ = Dialog::__delete__
+	)
 
 ----
 

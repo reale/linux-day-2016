@@ -11,7 +11,7 @@ $ x=foo
 $ echo $x
 0</pre></div><div class="step step-level-1" step="14" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="22400" data-y="0" data-z="0"><h1 id="variable-scope">Variable scope</h1><p>Local vs Global vs Environment</p></div><div class="step step-level-1" step="15" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="24000" data-y="0" data-z="0"><h1 id="return-values">Return values</h1><p>Bash functions don't return anything (except numbers in the range 0-255); they only produce output streams</p></div><div class="step step-level-1" step="16" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="25600" data-y="0" data-z="0"><h1 id="passing-by-reference">Passing by reference</h1><pre class="highlight code">function swap()
 {
-        eval "$1=${!2} $2=${!1}"
+    eval "$1=${!2} $2=${!1}"
 }
 
 $ x=a y=b
@@ -20,19 +20,25 @@ b a</pre></div><div class="step step-level-1" step="17" data-rotate-x="0" data-r
     -ne "s|^\($s\):|\1|"                                           \
     -e  "s|^\($s\)\($w\)$s:$s[\"']\(.*\)[\"']$s\$|\1$fs\2$fs\3|p"  \
     -e  "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"</pre></div><div class="step step-level-1" step="22" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="35200" data-y="0" data-z="0"><h1 id="json">JSON</h1></div><div class="step step-level-1" step="23" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="36800" data-y="0" data-z="0"><h1 id="paradigms">Paradigms</h1><p>OO?  Functional?  Flow-driven?  Reflective?</p></div><div class="step step-level-1" step="24" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="38400" data-y="0" data-z="0"><h1 id="large-programs">Large programs</h1><pre class="highlight code">source foobar.sh</pre></div><div class="step step-level-1" step="25" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="40000" data-y="0" data-z="0"><h1 id="debugging">Debugging</h1><pre class="highlight code">set -x</pre></div><div class="step step-level-1" step="26" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="41600" data-y="0" data-z="0"><h1 id="subshell-dilemma">Subshell Dilemma</h1><pre class="highlight code">$ c=0; ls * | while read i; do ((c++)); done; echo $c
-0</pre></div><div class="step step-level-1" step="27" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="43200" data-y="0" data-z="0"><h1 id="bashisms">Bashisms</h1><pre class="highlight code">eval x=\$$x</pre></div><div class="step step-level-1" step="28" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="44800" data-y="0" data-z="0"><h1 id="portability">Portability</h1><blockquote><p>It is easier to port a shell than a shell script.</p></blockquote><div class="cite"><span class="cite_label">Source: </span><cite>Larry Wall</cite></div></div><div class="step step-level-1" step="29" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="46400" data-y="0" data-z="0"><h1 id="why-does-it-matter">Why does it matter?</h1></div><div class="step step-level-1" step="30" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="48000" data-y="0" data-z="0"><h1 id="dry">DRY</h1><p>Don't write scripts, write libraries</p></div><div class="step step-level-1" step="31" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="49600" data-y="0" data-z="0"><h1 id="devops">DevOps</h1><p>Python/Ruby/Scala/... are not ubiquitous</p></div><div class="step step-level-1" step="32" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="51200" data-y="0" data-z="0"><h1 id="attempts">Attempts</h1></div><div class="step step-level-1" step="33" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="52800" data-y="0" data-z="0"><h1 id="bashinator">bashinator</h1><pre class="highlight code">function&#xA0;createDirectory()&#xA0;{
-        local&#xA0;directory=${1}
-        if&#xA0;[[&#xA0;&#xAD;z&#xA0;&#x201C;${directory}&#x201D;&#xA0;]];&#xA0;then
-                __msg&#xA0;err&#xA0;&#x201C;argument&#xA0;1&#xA0;(directory)&#xA0;missing&#x201D;
-                return&#xA0;2
-        fi
-        __msg&#xA0;debug&#xA0;&#x201C;directory:&#xA0;${directory}&#x201D;
-        if&#xA0;!&#xA0;mkdir&#xA0;&#xAD;p&#xA0;&#x201C;${directory}&#x201D;&#xA0;&gt;&gt;&#x201D;${_L}&#x201D;&#xA0;2&gt;&amp;1;&#xA0;then
-                __msg&#xA0;err&#xA0;&#x201C;failed&#xA0;to&#xA0;create&#xA0;directory&#xA0;'${directory}'&#x201D;
-                return&#xA0;2
-        fi
-        return&#xA0;0
-}</pre></div><div class="step step-level-1" step="34" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="54400" data-y="0" data-z="0"><h1 id="bashworks">bashworks</h1><blockquote><p>Inversion of control: the overall program's flow of control is not dictated by the caller, but by the framework. This applies for the framework and several modules, like conf, at a basic level, and in a polite way.</p><p>Polite functions: Generic reuseable functions usually take a module name string argument. It should let the actual module to overload what is it about to process.</p></blockquote></div><div class="step step-level-1" step="35" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="56000" data-y="0" data-z="0"><h1 id="log4sh">log4sh</h1><pre class="highlight code"># set alternative 'nc' command
+0</pre></div><div class="step step-level-1" step="27" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="43200" data-y="0" data-z="0"><h1 id="bashisms">Bashisms</h1><pre class="highlight code">eval x=\$$x</pre></div><div class="step step-level-1" step="28" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="44800" data-y="0" data-z="0"><h1 id="portability">Portability</h1><blockquote><p>It is easier to port a shell than a shell script.</p></blockquote><div class="cite"><span class="cite_label">Source: </span><cite>Larry Wall</cite></div></div><div class="step step-level-1" step="29" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="46400" data-y="0" data-z="0"><h1 id="why-does-it-matter">Why does it matter?</h1></div><div class="step step-level-1" step="30" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="48000" data-y="0" data-z="0"><h1 id="dry">DRY</h1><p>Don't write scripts, write libraries</p></div><div class="step step-level-1" step="31" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="49600" data-y="0" data-z="0"><h1 id="devops">DevOps</h1><p>Python/Ruby/Scala/... are not ubiquitous</p></div><div class="step step-level-1" step="32" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="51200" data-y="0" data-z="0"><h1 id="attempts">Attempts</h1><h1 id="bang-sh">bang.sh</h1><p>the "b" namespace</p></div><div class="step step-level-1" step="33" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="52800" data-y="0" data-z="0"><h1 id="bashinator">bashinator</h1><pre class="highlight code">function createDirectory() {
+    local directory=${1}
+    if [[ -z "${directory}" ]]; then
+        __msg err "argument 1 (directory) missing"
+        return 2
+    fi
+    __msg debug "directory: ${directory}"
+    if ! mkdir -p "${directory}" &gt;&gt; "$_{L}" 2&gt;&amp;1; then
+        __msg err "failed to create directory '${directory}'"
+        return 2
+    fi
+    return 0
+}</pre></div><div class="step step-level-1" step="34" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="54400" data-y="0" data-z="0"><h1 id="bash-manager">bash manager</h1><pre class="highlight code">hello:
+p1=World!
+
+$ ./bash_manager.sh -h /tmp/helloHome
+Hello World!</pre></div><div class="step step-level-1" step="35" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="56000" data-y="0" data-z="0"><h1 id="bash-toolbox">bash toolbox</h1><pre class="highlight code">alias   fail='printf "${BASH_SOURCE##*/}: ${FU ...
+alias  debug='printf "${BASH_SOURCE##*/}: ${FU ...
+alias caller='nm=$(builtin caller 0); nm=${nm% ...</pre></div><div class="step step-level-1" step="36" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="57600" data-y="0" data-z="0"><h1 id="bashworks">bashworks</h1><blockquote><p>Inversion of control: the overall program's flow of control is not dictated by the caller, but by the framework. This applies for the framework and several modules, like conf, at a basic level, and in a polite way.</p><p>Polite functions: Generic reuseable functions usually take a module name string argument. It should let the actual module to overload what is it about to process.</p></blockquote></div><div class="step step-level-1" step="37" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="59200" data-y="0" data-z="0"><h1 id="blp">blp</h1><p>minimalist approach</p></div><div class="step step-level-1" step="38" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="60800" data-y="0" data-z="0"><h1 id="log4sh">log4sh</h1><pre class="highlight code"># set alternative 'nc' command
 log4sh_setAlternative nc /bin/nc
 
 # add and configure a SyslogAppender that logs to a remote host
@@ -43,4 +49,15 @@ appender_syslog_setHost mySyslog somehost
 appender_activateOptions mySyslog
 
 # say Hello to the world
-logger_info 'Hello, world'</pre></div><div class="step step-level-1" step="36" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="57600" data-y="0" data-z="0"><h1 id="colophon">colophon</h1><p>vim, Hovercraft!, CentOS Linux 7.2</p></div><div class="step step-level-1" step="37" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="59200" data-y="0" data-z="0"><h1 id="exit-0">exit 0</h1><p>Roberto Reale</p><p><a href="http://linux-day-2016.github.io/">http://linux-day-2016.github.io/</a></p></div></div><div id="hovercraft-help" class="hide"><table><tr><th>Space</th><td>Forward</td></tr><tr><th>Right, Down, Page Down</th><td>Next slide</td></tr><tr><th>Left, Up, Page Up</th><td>Previous slide</td></tr><tr><th>P</th><td>Open presenter console</td></tr><tr><th>H</th><td>Toggle this help</td></tr></table></div><script type="text/javascript" src="js/impress.js"></script><script type="text/javascript" src="js/impressConsole.js"></script><script type="text/javascript" src="js/hovercraft.js"></script></body></html>
+logger_info 'Hello, world'</pre></div><div class="step step-level-1" step="39" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="62400" data-y="0" data-z="0"><h1 id="mbfl">mbfl</h1><pre class="highlight code">mbfl_argv_all_files || \
+    exit_because_wrong_command_line_arguments
+for item in "${ARGV[@]}"
+do
+test "${script_option_AUTO}" = yes &amp;&amp; {
+size=$(mbfl_file_get_size "${item}")</pre></div><div class="step step-level-1" step="40" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="64000" data-y="0" data-z="0"><h1 id="oobash">oobash</h1><pre class="highlight code">## class Dialog
+Dialog=(
+    # Explicit definition is needed to make inheritance possible.
+
+    function __new__ = Dialog::__new__
+    function __delete__ = Dialog::__delete__
+)</pre></div><div class="step step-level-1" step="41" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="65600" data-y="0" data-z="0"><h1 id="colophon">colophon</h1><p>vim, Hovercraft!, CentOS Linux 7.2</p></div><div class="step step-level-1" step="42" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="67200" data-y="0" data-z="0"><h1 id="exit-0">exit 0</h1><p>Roberto Reale</p><p><a href="http://linux-day-2016.github.io/">http://linux-day-2016.github.io/</a></p></div></div><div id="hovercraft-help" class="hide"><table><tr><th>Space</th><td>Forward</td></tr><tr><th>Right, Down, Page Down</th><td>Next slide</td></tr><tr><th>Left, Up, Page Up</th><td>Previous slide</td></tr><tr><th>P</th><td>Open presenter console</td></tr><tr><th>H</th><td>Toggle this help</td></tr></table></div><script type="text/javascript" src="js/impress.js"></script><script type="text/javascript" src="js/impressConsole.js"></script><script type="text/javascript" src="js/hovercraft.js"></script></body></html>
