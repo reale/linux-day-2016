@@ -62,7 +62,9 @@ http://mywiki.wooledge.org/BashWeaknesses
 Speed
 -----
 
-:(
+	It's too big and too slow.
+
+	-- man bash
 
 ----
 
@@ -252,6 +254,13 @@ OO?  Functional?  Flow-driven?  Reflective?
 
 ----
 
+Security
+--------
+
+Did you say dropping permissions?
+
+----
+
 Large programs
 --------------
 
@@ -314,6 +323,11 @@ DevOps
 ------
 
 Python/Ruby/Scala/... are not ubiquitous
+
+----
+
+Legacy code
+-----------
 
 ----
 
@@ -499,9 +513,53 @@ Bashlets
 ----
 
 Working example
-===============
+---------------
 
 http://bit.ly/linuxday2016 until Oct, 31
+
+----
+
+Modular
+-------
+
+.. code::
+
+	source bashlet datatype/version
+
+	version sort 1.44 1.4 1.4.4 1.4.4a 1.4-1234
+
+----
+
+Git integration
+---------------
+
+----
+
+General-purpose
+---------------
+
+IPC, math, network, OS-abstraction, parsers, UX, ...
+
+----
+
+Extensible
+----------
+
+Plugins for web protocols, databases, RCS, ...
+
+----
+
+Smart autoloading
+-----------------
+
+Via introspection
+
+----
+
+Work in progress
+----------------
+
+Plugins for web protocols, databases, RCS, ...
 
 ----
 
