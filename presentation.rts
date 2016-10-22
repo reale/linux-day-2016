@@ -271,6 +271,8 @@ Python/Ruby/Scala/... are not ubiquitous
 Attempts
 ========
 
+----
+
 bang.sh
 -------
 
@@ -295,6 +297,44 @@ bashinator
 	        return 2
 	    fi
 	    return 0
+	}
+
+----
+
+bash automated testing system
+-----------------------------
+
+.. code::
+
+	@test "addition using bc" {
+	    result="$(echo 2+2 | bc)"
+	    [ "$result" -eq 4 ]
+	}
+
+	@test "addition using dc" {
+	    result="$(echo 2 2+p | dc)"
+	    [ "$result" -eq 4 ]
+	}
+
+----
+
+bash infinity
+-------------
+
+.. code::
+
+	import util/namedParameters util/class
+
+	class:Human() {
+	    public string name
+	    public integer height
+	    public array eaten
+
+	    Human.__getter__() {
+		echo "I'm a human called $(this name), $(this height) cm tall."
+	    }
+
+	    ...
 	}
 
 ----
@@ -326,9 +366,9 @@ bash toolbox
 bashworks
 ---------
 
-	Inversion of control: the overall program's flow of control is not dictated by the caller, but by the framework. This applies for the framework and several modules, like conf, at a basic level, and in a polite way.
+	Inversion of control: the overall program's flow of control is not dictated by the caller, but by the framework.
 
-	Polite functions: Generic reuseable functions usually take a module name string argument. It should let the actual module to overload what is it about to process.
+	Polite functions: Generic reuseable functions usually take a module name string argument.
 
 ----
 
@@ -368,8 +408,9 @@ mbfl
 	    exit_because_wrong_command_line_arguments
 	for item in "${ARGV[@]}"
 	do
-	test "${script_option_AUTO}" = yes && {
-	size=$(mbfl_file_get_size "${item}")
+	    test "${script_option_AUTO}" = yes && {
+	        size=$(mbfl_file_get_size "${item}")
+        ...
 
 ----
 
