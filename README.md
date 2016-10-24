@@ -1,4 +1,4 @@
-# L’insostenibile leggerezza: estensioni della shell Bash
+# The Unbearable Lightness: Extending the Bash shell
 
 L’intervento presenta anzitutto una panoramica delle librerie di estensione per (e in) Bash, sotto entrambi gli aspetti tecnico e storico.
 
