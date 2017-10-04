@@ -5,3 +5,5 @@ These slides were written for my [talk](https://robertoreale.me/linux-day-2016) 
 Then comes bird's eye survey of some outstanding *specimina* among the existing libraries, not without the occasional fragment of code.
 
 Finally a working example is introduced: the [bashlets](https://bashlets.sh) library, a novel, work-in-progress modular extensible toolbox for Bash.
+
+The slides are available in a printable format at [issuu](https://issuu.com/roberto-reale/docs/linux-day-2016).
