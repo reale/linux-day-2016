@@ -6,4 +6,4 @@ Then comes bird's eye survey of some outstanding *specimina* among the existing 
 
 Finally a working example is introduced: the [bashlets](https://bashlets.sh) library, a novel, work-in-progress modular extensible toolbox for Bash.
 
-The slides are available in a printable format at [issuu](https://issuu.com/roberto-reale/docs/linux-day-2016).
+The slides are available in a printable format at [issuu](https://issuu.com/roberto-reale/docs/linux-day-2016) as well as at [SlideShare](https://www.slideshare.net/robertoreale/the-unbearable-lightness-extending-the-bash-shell).
