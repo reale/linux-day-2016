@@ -10,7 +10,7 @@
 #LinuxDay2016
 -------------
 
-http://ld16.lugroma3.org/
+http://lugroma3.org/
 
 ----
 
@@ -512,13 +512,6 @@ Bashlets
 
 ----
 
-Working example
----------------
-
-http://bit.ly/linuxday2016 until Oct, 31
-
-----
-
 Modular
 -------
 
@@ -526,7 +519,7 @@ Modular
 
 	source bashlet datatype/version
 
-	version sort 1.44 1.4 1.4.4 1.4.4a 1.4-1234
+	bash$$ version sort 1.44 1.4 1.4.4 1.4.4a 1.4-1234
 
 ----
 
@@ -572,6 +565,8 @@ exit 0
 ======
 
 Roberto Reale
+
+https://bashlets.sh
 
 https://github.com/bashlets
 
