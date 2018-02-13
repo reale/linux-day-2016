@@ -2,13 +2,15 @@
 
 ## Abstract
 
-These slides were written for my [talk](https://robertoreale.me/linux-day-2016) at the [Linux Day 2016](http://lugroma3.org/) in Rome.  They start with an overview of the intrinsic weaknesses that make so hard to design and implement a fully-fledged, general-purpose Bash library *in Bash*.
+These slides were written for my talk at the [Linux Day 2016](http://lugroma3.org/) in Rome.  They start with an overview of the intrinsic weaknesses that make so hard to design and implement a fully-fledged, general-purpose Bash library *in Bash*.
 
 Then comes bird's eye survey of some outstanding *specimina* among the existing libraries, not without the occasional fragment of code.
 
 Finally a working example is introduced: the [bashlets](https://bashlets.sh) library, a novel, work-in-progress modular extensible toolbox for Bash.
 
 ## Availability
+
+The [`master`](https://github.com/robertoreale/linux-day-2016/tree/master) branch contains the source code, whilst the [`gh-pages`](https://github.com/robertoreale/linux-day-2016/tree/gh-pages) branch contains the generated [web pages](https://robertoreale.me/linux-day-2016).
 
 The slides are available in a printable format at [issuu](https://issuu.com/roberto-reale/docs/linux-day-2016) as well as at [SlideShare](https://www.slideshare.net/robertoreale/the-unbearable-lightness-extending-the-bash-shell).
 
