@@ -517,7 +517,7 @@ Modular
 
 .. code::
 
-	source bashlet datatype/version
+	source bashlets datatype/version
 
 	bash$$ version sort 1.44 1.4 1.4.4 1.4.4a 1.4-1234
 
