@@ -10,7 +10,7 @@ Finally a working example is introduced: the [bashlets](https://bashlets.sh) lib
 
 ## Availability
 
-The [`master`](https://github.com/robertoreale/linux-day-2016/tree/master) branch contains the source code, whilst the [`gh-pages`](https://github.com/robertoreale/linux-day-2016/tree/gh-pages) branch contains the generated [web pages](https://robertoreale.me/linux-day-2016).
+The [`master`](https://github.com/reale/linux-day-2016/tree/master) branch contains the source code, whilst the [`gh-pages`](https://github.com/reale/linux-day-2016/tree/gh-pages) branch contains the generated [web pages](https://reale.me/linux-day-2016).
 
 The slides are available in a printable format at [issuu](https://issuu.com/roberto-reale/docs/linux-day-2016) as well as at [SlideShare](https://www.slideshare.net/robertoreale/the-unbearable-lightness-extending-the-bash-shell).
 
