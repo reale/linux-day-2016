@@ -6,7 +6,7 @@ These slides were written for my talk at the [Linux Day 2016](http://lugroma3.or
 
 Then comes bird's eye survey of some outstanding *specimina* among the existing libraries, not without the occasional fragment of code.
 
-Finally a working example is introduced: the [bashlets](https://bashlets.sh) library, a novel, work-in-progress modular extensible toolbox for Bash.
+Finally a working example is introduced: the [bashlets](https://github.com/reale/bashlets) library, a novel, work-in-progress modular extensible toolbox for Bash.
 
 ## Availability
 
